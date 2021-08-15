@@ -1,0 +1,36 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react", "react-hooks"
+    ],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/jsx-uses-react": "warn",
+        "jsx-quotes": ["error", "prefer-single"],
+        "semi": 1,
+        "quotes": ["warn", "single"],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "linebreak-style": 0,
+        "max-len": ["error", { "code": 200 }],
+        "react/jsx-props-no-spreading": "off",
+        "no-plusplus": 0,
+        "no-else-return": 0,
+        "react/no-array-index-key": 0
+    }
+}

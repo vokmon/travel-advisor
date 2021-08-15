@@ -6,7 +6,7 @@ Tech features
 - react context
 - scss
 - custom hooks
-- logging practice
-- Rapid api (Travel Advisor)
+- loggin practice
+- Rapid api
 - Google Cloud Platform
-- Google Map (api key from Google map javascript api)
+- Google Map

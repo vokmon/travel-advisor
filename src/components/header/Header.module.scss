@@ -1,0 +1,38 @@
+.header {
+  .toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      margin-right: 20px;
+      @media screen and (max-width: 650px) {
+        display: none;
+      }
+    }
+    .search-container {
+      width: 400px;
+      @media screen and (max-width: 650px) {
+        width: 100%;
+      }
+    }
+    .search {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #8b96da80;
+      padding: 0 10px;
+      border-radius: 5px;
+      width: 100%;
+      .searchIcon {
+        margin-right: 10px;
+      }
+      .input {
+        input {
+          color: white;
+        }
+      }
+    }
+  }
+}

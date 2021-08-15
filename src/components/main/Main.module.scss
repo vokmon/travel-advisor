@@ -1,0 +1,10 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  height: 100vh;
+  .grid {
+    width: 100%;
+    flex-grow: 1;
+  }
+}
