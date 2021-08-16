@@ -1,0 +1,28 @@
+.place-thumbnail-container {
+  position: absolute;
+  transform: "translate(-50%;-50%)";
+  z-index: 1;
+
+  &:hover {
+    z-index: 2;
+  }
+  .place-thumbnail-icon {
+    display: none !important;
+    @media screen and (max-width: 600px) {
+      display: block !important;
+    }
+  }
+
+  .place-thumbnail {
+    display: none;
+    @media screen and (min-width: 600px) {
+      display: block;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 150px;
+      cursor: pointer;
+    }
+  }
+}

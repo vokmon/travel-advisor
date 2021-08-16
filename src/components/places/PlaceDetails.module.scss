@@ -1,2 +1,47 @@
 .place-detail-container {
+  .card-media {
+    height: 220px;
+  }
+
+  .chip {
+    margin: 5px 10px 5px 0;
+  }
+
+  .subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    text-align: right;
+  }
+  .spacing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tel {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #444444;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+
+  .isOpen {
+    @extend .spacing;
+    margin-top: 5px;
+  }
+
+  .close-icon {
+    fill: #cc4762;
+  }
+  .open-icon {
+    fill: #36b536;
+  }
+
+  .openHour {
+    @extend .spacing;
+    margin-top: 5px;
+  }
 }

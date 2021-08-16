@@ -9,7 +9,8 @@ export const initialState = {
   coordinatesData: null,
   locale: {
     ...LOCALES.th,
-  }
+  },
+  currentSelectedPlace: null,
 };
 
 const actionName = {
@@ -19,6 +20,7 @@ const actionName = {
   UPDATE_PLACES_DATA: 'UPDATE_PLACES_DATA',
   UPDATE_COORDINATES_DATA: 'UPDATE_COORDINATES_DATA',
   UPDATE_LOCALE_DATA: 'UPDATE_LOCALE_DATA',
+  UPDATE_CURRENT_SELECTED_PLACE: 'UPDATE_CURRENT_SELECTED_PLACE',
 };
 
 const reducerFunc = (state, action) => {
@@ -53,6 +55,11 @@ const reducerFunc = (state, action) => {
       return {
         ...state,
         locale: action.payload,
+      };
+    case actionName.UPDATE_CURRENT_SELECTED_PLACE:
+      return {
+        ...state,
+        currentSelectedPlace: action.payload,
       };
     default: return state;
   }
@@ -107,6 +114,12 @@ export const createActions = (dispatch) => {
       return dispatch({
         type: actionName.UPDATE_LOCALE_DATA,
         payload: localeData,
+      });
+    },
+    updateCurrentSelectedPlace: (currentSelectedPlace) => {
+      return dispatch({
+        type: actionName.UPDATE_CURRENT_SELECTED_PLACE,
+        payload: currentSelectedPlace,
       });
     },
   };

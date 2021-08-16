@@ -13,7 +13,7 @@ export default function Main() {
     <div className={style['main-container']}>
       <Header />
       <Grid container className={style.grid}>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={4} className={style.left}>
           <List />
         </Grid>
         <Grid item xs={12} md={8}>

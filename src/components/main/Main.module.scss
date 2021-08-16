@@ -3,6 +3,9 @@
   flex-direction: column;
   width: 99%;
   height: 100vh;
+  .left {
+    border-right: 1px solid #333333;
+  }
   .grid {
     width: 100%;
     flex-grow: 1;
