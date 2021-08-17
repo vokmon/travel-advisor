@@ -72,10 +72,10 @@ const PlaceDetails = React.forwardRef(({
           <Typography variant='body2' color='textSecondary' className={style.openHour}>
             Open hour {place.hours.week_ranges[dayOfWeek].map((times, i) => {
               return (
-                <div key={`time-${i}`}>
+                <span key={`time-${i}`}>
                   
                   {padding(Math.floor(times.open_time / 60))}:{padding(Math.floor(times.open_time % 60))} - {padding(Math.floor(times.close_time / 60))}:{padding(Math.floor(times.close_time % 60))}
-                </div>
+                </span>
               );
             })}
           </Typography>

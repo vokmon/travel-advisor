@@ -1,10 +1,10 @@
-.header {
+.header-container {
+  z-index: 0 !important;
   .toolbar {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
     .title {
       margin-right: 20px;
       @media screen and (max-width: 650px) {
@@ -13,6 +13,9 @@
     }
     .search-container {
       width: 400px;
+      > div {
+        width: 100%;
+      }
       @media screen and (max-width: 650px) {
         width: 100%;
       }

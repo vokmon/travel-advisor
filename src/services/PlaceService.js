@@ -25,8 +25,8 @@ export default {
       headers,
     };
 
-    // const { data: { data }} = await axios.get(URL, options);
-    const { data } = lang === 'th_TH' ? mockDataTh : mockData;
+    const { data: { data }} = await axios.get(URL, options);
+    // const { data } = lang === 'th_TH' ? mockDataTh : mockData;
     return data;
   }
 };

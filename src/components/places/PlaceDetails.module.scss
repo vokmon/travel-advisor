@@ -9,7 +9,7 @@
 
   .subtitle {
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: space-between;
     margin-top: 10px;
     text-align: right;
@@ -28,6 +28,9 @@
     }
   }
 
+  .MuiTypography-subtitle1 {
+    text-align: right;
+  }
   .isOpen {
     @extend .spacing;
     margin-top: 5px;

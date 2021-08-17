@@ -7,6 +7,7 @@ import AppplicationContextProvider from './context/AppplicationContext';
 function App() {
   useEffect(() => {
     Signature.signToConsole();
+
   }, []);
 
   return (

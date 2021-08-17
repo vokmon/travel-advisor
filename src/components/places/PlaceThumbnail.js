@@ -13,10 +13,13 @@ export default function PlaceThumbnail({
       <LocationOnOutlinedIcon className={style['place-thumbnail-icon']} color='primary' fontSize='large' />
       <Paper elevation={3} className={style['place-thumbnail']}>
         <Typography className={style.typography} variant='subtitle2' gutterBottom> {place.name}</Typography>
-        <img
-          className={style.pointer}
-          src={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'}
-        />
+        {place.photo && (
+          <img
+            className={style.pointer}
+            src={place.photo.images.large.url}
+          />
+        )}
+
         <Rating name='read-only' size='small' value={Number(place.rating)} readOnly />
       </Paper>
     </div>
