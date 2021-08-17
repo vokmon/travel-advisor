@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Typography, Button, Card, CardMedia, CardContent, CardActions, Chip } from '@material-ui/core';
@@ -88,6 +89,9 @@ const PlaceDetails = React.forwardRef(({
         <Button size='small' color='primary' onClick={() => window.open(place.website, '_blank')}>
           Website
         </Button>
+        <Button size='small' color='primary' onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${place.address}&waypoints=${place.name}&mode=driving`, '_blank')}>
+          Direction ({place.distance_string})
+        </Button>
       </CardActions>
 
     </Card>
@@ -115,6 +119,7 @@ PlaceDetails.propTypes = {
     is_closed: PropTypes.bool,
     open_now_text: PropTypes.string,
     hours: PropTypes.any,
+    distance_string: PropTypes.string,
   }),
 };
 
