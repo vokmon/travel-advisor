@@ -9,6 +9,7 @@ import style from './List.module.scss';
 const localeOptions = [
   LOCALES.th,
   LOCALES.en_US,
+  LOCALES.en_NZ,
 ];
 
 export default function List() {

@@ -39,8 +39,14 @@ export const LOCALES = {
   },
   en_US: {
     key: 'en_US',
-    label: 'EN (US)',
+    label: 'EN (usd)',
     currency: 'USD',
     lang: 'en_US',
+  },
+  en_NZ: {
+    key: 'en_NZ',
+    label: 'EN (nzd)',
+    currency: 'NZD',
+    lang: 'en_NZ',
   }
 };
