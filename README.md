@@ -1,4 +1,6 @@
 # travel-advisor
+Demo https://travel-place-finder.netlify.app/
+
 Suggest restaurants, hotels, places around you
 
 Tech features
