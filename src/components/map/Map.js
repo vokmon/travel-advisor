@@ -5,13 +5,15 @@ import { AppplicationContext } from '../../context/AppplicationContext';
 import style from './Map.module.scss';
 import PlaceThumbnail from '../places/PlaceThumbnail';
 import { useGetFilteredPlaceData } from '../../hooks/useGetFilteredPlaceData';
+import useDebounce from '../../hooks/useDebounce';
 
 
 export default function Map() {
   const [defaultCenter, setDefaultCenter] = useState();
-
   const { data, actions } = useContext(AppplicationContext);
-  const center = data?.coordinatesData?.center || { lat: 0, lng: 0 };
+  const [internalCoordinate, setInternalCoordinate] = useState(data?.coordinatesData);
+
+  const center = internalCoordinate?.center || data?.coordinatesData?.center|| { lat: 0, lng: 0 };
 
   const filtedPlaceData = useGetFilteredPlaceData();
 
@@ -29,6 +31,13 @@ export default function Map() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const debouncedCoordinateValue = useDebounce(internalCoordinate, 600);
+
+  useEffect(() => {
+    actions.updateCoordinatesData(debouncedCoordinateValue); 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedCoordinateValue]);
+
   return (
     <div className={style['map-container']}>
       {defaultCenter ? (
@@ -40,7 +49,10 @@ export default function Map() {
           defaultZoom={14}
           margin={[50, 50, 50, 50]}
           options={''}
-          onChange={(value) => { actions.updateCoordinatesData(value); }}
+          onChange={(value) => { 
+            // actions.updateCoordinatesData(value); 
+            setInternalCoordinate(value);
+          }}
         // onChildClick={(child) => {
         //   console.log(child);
         // }}
