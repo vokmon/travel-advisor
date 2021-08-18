@@ -41,7 +41,7 @@ const PlaceDetails = React.forwardRef(({
         </Box>
         <Box display='flex' justifyContent='space-between'>
           <Typography component='legend'>Ranking</Typography>
-          <Typography gutterBottom variant='subtitle1'>
+          <Typography gutterBottom variant='subtitle1' className={style.right}>
             {place.ranking}
           </Typography>
         </Box>
@@ -89,7 +89,7 @@ const PlaceDetails = React.forwardRef(({
         <Button size='small' color='primary' onClick={() => window.open(place.website, '_blank')}>
           Website
         </Button>
-        <Button size='small' color='primary' onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${place.address}&waypoints=${place.name}&mode=driving`, '_blank')}>
+        <Button size='small' color='primary' onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${place.address}&destination_place_id=${place.location_id}`, '_blank')}>
           Direction ({place.distance_string})
         </Button>
       </CardActions>
@@ -120,6 +120,7 @@ PlaceDetails.propTypes = {
     open_now_text: PropTypes.string,
     hours: PropTypes.any,
     distance_string: PropTypes.string,
+    location_id: PropTypes.string,
   }),
 };
 
