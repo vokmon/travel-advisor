@@ -82,7 +82,7 @@ const PlaceDetails = React.forwardRef(({
           </Typography>
         )}
       </CardContent>
-      <CardActions>
+      <CardActions className={style.actions}>
         <Button size='small' color='primary' onClick={() => window.open(place.web_url, '_blank')}>
           Trip Advisor
         </Button>
@@ -90,7 +90,7 @@ const PlaceDetails = React.forwardRef(({
           Website
         </Button>
         <Button size='small' color='primary' onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${place.address}&destination_place_id=${place.location_id}`, '_blank')}>
-          Direction ({place.distance_string})
+          <div className={style.direction}>Direction <div>({place.distance_string})</div></div>
         </Button>
       </CardActions>
 
