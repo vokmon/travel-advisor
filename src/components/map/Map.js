@@ -13,7 +13,7 @@ export default function Map() {
   const { data, actions } = useContext(AppplicationContext);
   const [internalCoordinate, setInternalCoordinate] = useState(data?.coordinatesData);
 
-  const center = internalCoordinate?.center || data?.coordinatesData?.center|| { lat: 0, lng: 0 };
+  const center = data?.coordinatesData?.center || internalCoordinate?.center || { lat: 0, lng: 0 };
 
   const filtedPlaceData = useGetFilteredPlaceData();
 
