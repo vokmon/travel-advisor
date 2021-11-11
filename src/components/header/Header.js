@@ -72,9 +72,6 @@ export default function Header() {
   return (
     <AppBar className={style['header-container']} position='static'>
       <Toolbar className={style.toolbar}>
-        <Typography variant='h5' className={style.title}>
-          Travel Advisor
-        </Typography>
         <Box display='flex' className={style['search-container']}>
           {isReady && (
             <Autocomplete onLoad={handleOnLoad} onPlaceChanged={handleOnPlaceChanged}>
@@ -88,6 +85,9 @@ export default function Header() {
           )}
 
         </Box>
+        <Typography variant='h5' className={style.title}>
+          Travel Advisor
+        </Typography>
       </Toolbar>
     </AppBar>
   );
